@@ -43,6 +43,14 @@ class PubTest < MiniTest::Test
      assert_equal(0, @pub.stock)
 
    end
+
+   def test_transaction_pub_loses_customer_gains
+     @pub.add_drink(@beer)
+     @pub.transaction(@customer1, @beer)
+     assert_equal(1, @customer1.drinks.count)
+     assert_equal(0, @pub.stock)
+  end
+
    #
 
 

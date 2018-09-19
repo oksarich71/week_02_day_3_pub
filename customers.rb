@@ -14,15 +14,16 @@ attr_accessor :wallet, :drinks
 
   def buy_drink(drink)
     @wallet -= drink.price
+    @drinks << drink if !drink.nil?
   end
 
   def drink_count
     @drinks.count
   end
 
-  def take_drink(drink)
-    @drinks << drink if !drink.nil?
-  end
+  # def take_drink(drink)
+  # end
+
 
 
 end #class end

@@ -23,7 +23,12 @@ class Pub
   end
 
   def drink_sold(drink)
-    return @drinks.pop
+    return @drinks.delete(drink)
+  end
+
+  def transaction(customer,drink_to_buy)
+    returned_drink = drink_sold(drink_to_buy)
+    customer.buy_drink(returned_drink)
   end
 
 
