@@ -35,7 +35,14 @@ class PubTest < MiniTest::Test
      assert_equal(96, @customer1.wallet)
    end
 
-   # def test_customer_buys_drink_pub_loses_drink
+   def test_customer_buys_drink_pub_loses_drink
+     @pub.add_drink(@beer)
+     @pub.drink_bought(@beer)
+     @customer1.buy_drink(@beer)
+     @pub.drink_sold(@beer)
+     assert_equal(0, @pub.stock)
+
+   end
    #
 
 

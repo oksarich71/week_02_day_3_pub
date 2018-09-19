@@ -22,6 +22,10 @@ class Pub
     @till += drink.price
   end
 
+  def drink_sold(drink)
+    @drinks.pop
+  end
+
 
 
 end
