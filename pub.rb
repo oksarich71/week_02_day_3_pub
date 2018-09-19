@@ -23,7 +23,7 @@ class Pub
   end
 
   def drink_sold(drink)
-    @drinks.pop
+    return @drinks.pop
   end
 
 
