@@ -26,7 +26,7 @@ class CustomerTest < MiniTest::Test
   end
 
   def test_customer_can_take_drink
-    @customer2.take_drink(@beer)
+    @customer2.buy_drink(@beer)
     assert_equal(1, @customer2.drink_count)
   end
 
