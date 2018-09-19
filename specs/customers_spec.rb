@@ -10,7 +10,7 @@ class CustomerTest < MiniTest::Test
 
     @customer1 = Customer.new("Thomas", 100, 24)
     @customer2 = Customer.new("Oksana", 100, 35)
-    @beer = Drink.new("Session", 4)
+    @beer = Drink.new("Session", 4, 6)
 
     @pub = Pub.new("Chanter")
 
@@ -30,6 +30,10 @@ class CustomerTest < MiniTest::Test
     assert_equal(1, @customer2.drink_count)
   end
 
+def test_customer_drunkeness
+  @customer1.buy_drink(@beer)
+  assert_equal(6, @customer1.drunkeness)
+end
 
 
 
