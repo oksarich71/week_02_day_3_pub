@@ -1,0 +1,21 @@
+require("minitest/autorun")
+require("minitest/rg")
+require_relative("../drinks.rb")
+
+class DrinkTest < MiniTest::Test
+
+def test_drink_has_name()
+  beer = Drink.new("First World Problems", 4)
+  assert_equal("First World Problems", beer.name)
+end
+
+def test_drink_has_price()
+  martini = Drink.new("Martini", 6)
+  assert_equal(6, martini.price)
+end
+
+
+
+
+end
+#
