@@ -10,5 +10,9 @@ class Pub
     @drinks = []
   end
 
+  def stock()
+    @drinks.count
+  end
+
 
 end

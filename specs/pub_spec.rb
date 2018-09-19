@@ -17,6 +17,11 @@ class PubTest < MiniTest::Test
      assert_equal("Chanter", @pub.name)
    end
 
+   def test_stock_count()
+     assert_equal(0, @pub.stock)
+   end
+
+
 
 
 
