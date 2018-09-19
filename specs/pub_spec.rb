@@ -2,7 +2,7 @@ require("minitest/autorun")
 require("minitest/rg")
 require_relative("../pub.rb")
 require_relative("../drinks.rb")
-require_relative("../customer.rb")
+require_relative("../customers.rb")
 
 class PubTest < MiniTest::Test
 
@@ -11,6 +11,7 @@ class PubTest < MiniTest::Test
   @martini = Drink.new("Martini", 6)
 
   @pub = Pub.new("Chanter")
+  @customer1 = Customer.new("Thomas", 100, 24)
 
   end
 
@@ -26,6 +27,19 @@ class PubTest < MiniTest::Test
      @pub.add_drink(@beer)
      assert_equal(1, @pub.stock)
    end
+
+   def test_customer_buys_drink_pub_taking_money
+     @pub.drink_bought(@beer)
+     @customer1.buy_drink(@beer)
+     assert_equal(4, @pub.till)
+     assert_equal(96, @customer1.wallet)
+   end
+
+   # def test_customer_buys_drink_pub_loses_drink
+   #
+
+
+   # def test
 
 
 
