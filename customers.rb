@@ -4,7 +4,7 @@ attr_reader :name, :age
 attr_accessor :wallet, :drinks, :drunkeness
 
 
-  def initialize(name, wallet, age)
+  def initialize(name, wallet, age, drunkeness)
     @name = name
     @wallet = wallet
     @age =  age

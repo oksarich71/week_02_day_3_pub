@@ -27,7 +27,8 @@ class Pub
   end
 
   def transaction(customer,drink_to_buy)
-    if customer.age < 18
+    if customer.age < 18 || customer.drunkeness < 15
+    # elsif customer.drunkeness < 15
       return "Soft drink only!"
     else
     returned_drink = drink_sold(drink_to_buy)
@@ -38,4 +39,5 @@ class Pub
 
 
 
-end
+
+end #class end
